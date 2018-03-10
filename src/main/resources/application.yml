@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/DB_NAME"
+    username: DB_USER
+    password: DB_PASS
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database_platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: false
+
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+
+  config:
+      fileUploadDirectory: file-upload
+      pageSize: 50
+      expirationDays: 7
+      maxExpirationDays: 180
+server:
+    port: 6060
